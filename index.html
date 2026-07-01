@@ -1,1 +1,29 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Paws & Beans Cafe | Umm Al Quwain</title><link rel="stylesheet" href="style.css"></head><body><header class="hero"><nav><div class="brand">🐾 Paws & Beans</div><div><a href="#menu">Menu</a><a href="#visit">Visit</a><a href="admin.html">Admin</a></div></nav><section class="hero-content"><p class="eyebrow">Pet-friendly café in Umm Al Quwain</p><h1>Coffee, comfort, and cozy moments.</h1><p>Explore our coffee, iced drinks, matcha, and café favorites.</p><a class="btn" href="#menu">View Menu</a></section></header><main><section class="intro"><h2>Welcome to Paws & Beans Cafe</h2><p>A cozy café experience for coffee lovers and pet lovers. Scan the QR code, browse the menu, and enjoy your favorite drink.</p></section><section id="menu" class="menu-section"><h2>Our Menu</h2><div class="filters"><button class="active" data-filter="All">All</button><button data-filter="Hot Coffee">Hot Coffee</button><button data-filter="Iced Drinks">Iced Drinks</button><button data-filter="Matcha">Matcha</button></div><div id="menuGrid" class="grid"></div></section><section id="visit" class="visit"><h2>Visit Us</h2><p><strong>Location:</strong> Paws & Beans Cafe, Umm Al Quwain, United Arab Emirates</p><p><strong>Instagram:</strong> @pawsandbeanscafe</p></section></main><footer>© 2026 Paws & Beans Cafe. All rights reserved.</footer><script src="menu-data.js"></script><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paws & Beans Cafe | Umm Al Quwain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav"><div class="brand">🐾 Paws & Beans</div><a href="admin.html" class="admin-link">Admin</a></nav>
+    <div class="hero-content"><p class="eyebrow">Coffee • Pets • Community</p><h1>Paws & Beans Cafe</h1><p>Cozy coffee moments in Umm Al Quwain.</p><a href="#menu" class="btn">View Menu</a></div>
+  </header>
+  <main>
+    <section class="intro"><h2>Our Menu</h2><p>Fresh coffee, iced drinks, matcha, and cafe favorites.</p></section>
+    <section class="filters" id="categoryFilters"></section>
+    <section class="menu-grid" id="menu"></section>
+    <section class="contact"><h2>Visit Us</h2><p>Paws & Beans Cafe, Umm Al Quwain, United Arab Emirates</p></section>
+  </main>
+  <footer>© <span id="year"></span> Paws & Beans Cafe</footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="menu-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

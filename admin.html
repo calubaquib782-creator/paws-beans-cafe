@@ -1,1 +1,28 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Paws & Beans Admin Guide</title><link rel="stylesheet" href="style.css"><style>.adminbox{max-width:900px;margin:60px auto;background:white;padding:30px;border-radius:24px;box-shadow:0 12px 30px rgba(67,38,16,.12)}code{background:#f4eadf;padding:4px 7px;border-radius:6px}.steps li{margin:12px 0}</style></head><body><nav><div class="brand">🐾 Paws & Beans Admin</div><div><a href="index.html">View Site</a></div></nav><div class="adminbox"><h1>Easy Update Guide</h1><p>This simple version is made for GitHub + Netlify. To change a price or menu item, edit <code>menu-data.js</code>.</p><ol class="steps"><li>Open <code>menu-data.js</code>.</li><li>Change the item price, name, category, or image path.</li><li>Save the file.</li><li>In GitHub Desktop, type summary: <code>Update menu</code>.</li><li>Click <strong>Commit to main</strong>, then <strong>Push origin</strong>.</li></ol><p>To change a photo, replace the matching image inside the <code>images</code> folder using the same filename.</p></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paws & Beans Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+  <header class="admin-top"><div>🐾 Paws & Beans Admin</div><div><button id="logoutBtn" class="ghost hidden">Logout</button><a href="index.html">View Site</a></div></header>
+  <main class="admin-wrap">
+    <section id="setupNotice" class="panel warning hidden"><h2>Supabase key needed</h2><p>Open <code>supabase-config.js</code> and paste your Publishable/Anon key.</p></section>
+    <section id="loginPanel" class="panel"><h1>Admin Login</h1><p>Use the admin email you create in Supabase Authentication.</p><input id="email" type="email" placeholder="Email"><input id="password" type="password" placeholder="Password"><button id="loginBtn" class="btn full">Login</button><p id="loginMsg" class="msg"></p></section>
+    <section id="dashboard" class="hidden">
+      <div class="admin-head"><div><h1>Menu Dashboard</h1><p>Add, edit, delete, upload photos, and update prices.</p></div><button id="importBtn" class="btn">Import starter menu</button></div>
+      <section class="panel"><h2 id="formTitle">Add Menu Item</h2><div class="form-grid"><input id="itemId" type="hidden"><input id="name" placeholder="Product name"><input id="price" placeholder="Price e.g. AED 18"><input id="category" placeholder="Category"><input id="sortOrder" type="number" placeholder="Sort order"><textarea id="description" placeholder="Description"></textarea><label class="check"><input id="available" type="checkbox" checked> Available</label><input id="imageFile" type="file" accept="image/*"><input id="imageUrl" placeholder="Image URL / path"></div><div class="actions"><button id="saveBtn" class="btn">Save Item</button><button id="clearBtn" class="ghost">Clear</button></div><p id="formMsg" class="msg"></p></section>
+      <section class="panel"><h2>Current Products</h2><div id="adminList" class="admin-list"></div></section>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="menu-data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
