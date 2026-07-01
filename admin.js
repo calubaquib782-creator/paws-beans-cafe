@@ -2,10 +2,10 @@ const $ = id => document.getElementById(id);
 const setupNotice=$('setupNotice'), loginPanel=$('loginPanel'), dashboard=$('dashboard'), logoutBtn=$('logoutBtn');
 let items=[];
 
-if (!window.pawsSupabase_ANON_KEY || window.pawsSupabase_ANON_KEY.includes('PASTE_')) setupNotice.classList.remove('hidden');
+if (!SUPABASE_ANON_KEY || SUPABASE_ANON_KEY.includes('PASTE_')) setupNotice.classList.remove('hidden');
 
 async function init(){
-  if (!window.pawsSupabase_ANON_KEY || window.pawsSupabase_ANON_KEY.includes('PASTE_')) return;
+  if (!SUPABASE_ANON_KEY || SUPABASE_ANON_KEY.includes('PASTE_')) return;
   const { data: { session } } = await window.pawsSupabase.auth.getSession();
   if(session) showDashboard();
 }
